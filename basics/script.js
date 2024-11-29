@@ -58,5 +58,28 @@ class Players {
 }
 
 
+
 const gomszab = new Players('gomszab');
 console.log(gomszab);
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+function Person(name){
+
+    this.name = name;
+
+}
+
+Person.prototype.getName = function(){
+
+    return this.name;
+}
+
+function Student(name, school){
+    
+    this.school = school;
+    Person.call(this, name);
+}
+
+Object.setPrototypeOf(Student.prototype, Person.prototype);
+
