@@ -1,11 +1,11 @@
-function Player(nickname){
+/*function Player(nickname){
 
     this.name = nickname;
     this.playedMatch = 0;
 
 }
 
-/*Player.prototype.play = function(){
+Player.prototype.play = function(){
 
     this.playedMatch ++;
     console.log(this.name + "has played");
