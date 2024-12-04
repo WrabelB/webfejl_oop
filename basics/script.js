@@ -104,3 +104,13 @@ class HaziStudent extends HaziPerson{
     }
         
 }
+
+class Animal {  //Letrehozzuk az Os osztalyt, Allatok
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    makeSound() {
+        console.log(this.sound);
+    }
+}
