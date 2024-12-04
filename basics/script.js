@@ -64,22 +64,66 @@ console.log(gomszab);
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 
-function Person(name){
+class Person { 
+    constructor(name) {
+        this.name = name;
+    }
 
-    this.name = name;
-
+    getName() {
+        console.log(this.name);
+    }
 }
 
-Person.prototype.getName = function(){
 
-    return this.name;
+class Student extends Person {
+    constructor(name, school) {
+        super(name);
+        this.school = school;
+    }
 }
 
-function Student(name, school){
-    
-    this.school = school;
-    Person.call(this, name);
+const ember = new Person('József Kalman');
+const tanulo = new Student('Futykos Bela', 'BMSZC Bolyai');
+console.log(tanulo.name, tanulo.school);
+ember.getName();
+
+class Animal {
+    constructor(name, voice) {
+        this.name = name;
+        this.voice = voice;
+    }
+
+    ilyenHangotAdKi() {
+        console.log(`${this.name ? this.name : 'Az allat'} ilyen hangja van: ${this.voice}`);
+    }
 }
 
-Object.setPrototypeOf(Student.prototype, Person.prototype);
+class Bird extends Animal {
+    constructor(name, voice) {
+        super(name, voice);
+    }
+
+    csinalVmit() {
+        console.log(`${this.name ? this.name : 'A golya'} sokat repul.`);
+    }
+}
+
+class Mammal extends Animal {
+    constructor(name, voice) {
+        super(name, voice);
+    }
+
+    megy() {
+        console.log(`${this.name ? this.name : 'Emlosok'} altalaban a foldon jarnak`);
+    }
+}
+
+const rigo = new Bird('Rigocska', 'füty füty füty füty');
+const kutya = new Mammal('Hulk', 'VAU VAU');
+
+rigo.makeSound();
+rigo.fly();
+
+kutya.makeSound();
+kutya.walk();
 
