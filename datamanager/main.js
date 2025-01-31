@@ -31,6 +31,7 @@ class DataManager{
      */
     setUpdatecallback(callback){
         this.#updatecallback = callback;
+        this.#updatecallback(this.#array);
     }
 
     /**
@@ -82,6 +83,27 @@ class DataTable{
         document.body.appendChild(table);
 
         const tbody = document.createElement('tbody');
-        document.body.appendChild(tbody);
+        table.appendChild(tbody);
+
+        dataManager.setUpdatecallback((persons) => {
+            tbody.innerHTML = "";
+
+            for(const x of persons){
+                const tr = document.createElement('tr');
+                tbody.appendChild(tr)
+
+                const td = document.createElement('td');
+                td.innerHTML = x.nev;
+                tr.appendChild(td);
+
+                const td1 = document.createElement('td');
+                td1.innerHTML = x.eletkor;
+                tr.appendChild(td1);
+            };
+        })
     }
 }
+
+const dataManager = new DataManager([{nev: 'Józsi', eletkor: 17}, {nev: 'Feri', eletkor: 16}, {nev: 'Gomszab', eletkor: 37}]);
+console.log(dataManager);
+const datatable = new DataTable(dataManager);
