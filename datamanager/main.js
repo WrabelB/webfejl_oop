@@ -39,6 +39,7 @@ class DataManager{
      */
     addDatamanager(person){
         this.#array.push(person);
+        this.#updatecallback(this.#array);
     }
 
     /**
@@ -49,9 +50,10 @@ class DataManager{
         const result = [];
 
         for(const elem of this.#array){
-            if(elem.nev === name)
+            if(elem.nev.includes(name) === name)
                 result.push(name)
         };
+        this.#updatecallback(result);
     }
 
     /**
@@ -65,5 +67,21 @@ class DataManager{
             if(elem.eletkor === age)
                 result.push(age)
         };
+        this.#updatecallback(result);
+    }
+}
+
+
+class DataTable{
+    /**
+     * 
+     * @param {DataManager} dataManager 
+     */
+    constructor(dataManager){
+        const table = document.createElement('table');
+        document.body.appendChild(table);
+
+        const tbody = document.createElement('tbody');
+        document.body.appendChild(tbody);
     }
 }
