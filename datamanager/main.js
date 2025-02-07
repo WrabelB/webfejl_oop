@@ -70,7 +70,19 @@ class DataManager{
         }
         this.#updatecallback(result);
     }
+
+    
+    filter(filterCallback){ // A filter fuggvenyben megadott feltetel alapjan szuri az adatokat es frissiti a tablazatot.
+        const result = [];
+        for (const person of this.#array) {
+            if (filterCallback(person)) { // A filterCallback fuggvenyben megadott feltetel alapjan szuri az adatokat es frissiti a tablazatot.
+                result.push(person);
+            }
+        }
+        this.#updatecallback(result);
+    }
 }
+
 
 
 class DataTable{
@@ -129,21 +141,41 @@ const datatable = new DataTable(dataManager);
 
 // Input mezok letrehozasa es event listenerek
 
-const nameInput = document.createElement('input');
+const nameInput = document.createElement('input'); // Letrehozom az input mezot
 document.body.appendChild(nameInput);
 
-nameInput.addEventListener('input', () => {
+nameInput.addEventListener('input', () => { // Az input mezoben megadott nev alapjan szuri az adatokat es frissiti a tablazatot.
     dataManager.filterName(nameInput.value);
 });
 
-const ageInput = document.createElement('input');
+const ageInput = document.createElement('input'); // Letrehozom az input mezot
 ageInput.type = "number";
 document.body.appendChild(ageInput);
 
 
-ageInput.addEventListener('input', () => {
+ageInput.addEventListener('input', () => { // Az input mezoben megadott eletkor alapjan szuri az adatokat es frissiti a tablazatot.
     const ageValue = Number(ageInput.value);
     dataManager.filterAge(ageValue);
 });
 
+const input = document.createElement('input');
+input.type = "file";
+document.body.appendChild(input);
+input.addEventListener('change', (e) => { // A fajl beolvasasa utan a fajl tartalmat soronkent feld
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsText(file);
 
+    reader.onload = () => { // A beolvasott fajl tartalmat soronkent feldaraboljuk es a kapott tomb elemeit beletesszuk a szemelyeket tarolo tombbe.
+        const filecontent = reader.result;
+        const split = filecontent.split('\n');
+        
+        for (const elem of split) { // A split tomb elemeit feldaraboljuk a pontosvesszok menten es letrehozunk egy szemely objektumot.
+            const splitTomb = elem.split(';');
+            const person = {
+                nev: splitTomb[0], 
+                eletkor: Number(splitTomb[1])}; // A splitTomb 0. es 1. elemet a nev es eletkor ertekekkent taroljuk.
+            dataManager.addDatamanager(person); // A letrehozott szemely objektumot hozzaadjuk a szemelyeket tarolo tombhoz.
+        }
+    };
+});
