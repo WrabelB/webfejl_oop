@@ -43,43 +43,48 @@ class DataManager{
         this.#updatecallback(this.#array);
     }
 
-    /**
-     * 
-     * @param {string} name 
-     */
-    filterName(name) { // A megadott nev alapjan szuri az adatokat és frissiti a megjelenitest.
-        const result = [];
-        for (const person of this.#array) {
-            if (person.nev.includes(name)) {
-                result.push(person);
+    orderByName() {  // A szemelyeket tarolo tombot rendezzuk nev szerint es frissitjuk a tablazatot.
+        const sorted = this.#array.slice();
+        for (let i = 0; i < sorted.length - 1; i++) {
+            for (let j = i + 1; j < sorted.length; j++) {
+                if (sorted[i].nev.localeCompare(sorted[j].nev) > 0) { // A tomb elemeit vegigjarjuk es a nev szerint rendezzuk oket. 
+                // A localeCompare() metodus a stringeket osszehasonlitja es visszaadja a kulonbseget. Vagyis ha az elso string nagyobb, mint a masodik, 
+                // akkor pozitiv erteket ad vissza, ha egyenlo, akkor 0-t, ha kisebb, akkor negativ erteket.
+                    let temp = sorted[i];
+                    sorted[i] = sorted[j];
+                    sorted[j] = temp;
+                }
             }
         }
-        this.#updatecallback(result);
+        this.#updatecallback(sorted);
     }
 
-    /**
-     * 
-     * @param {number} age 
-     */
-    filterAge(age) { // Az adott eletkorhoz tartozo szemelyeket keresi meg es frissiti a tabalzatot.
-        const result = [];
-        for (const person of this.#array) {
-            if (person.eletkor === age) {
-                result.push(person);
+    orderByAge() { // A szemelyeket tarolo tombot rendezzuk eletkor szerint es frissitjuk a tablazatot.
+        const sorted = this.#array.slice(); //
+        for (let i = 0; i < sorted.length - 1; i++) { // A tomb elemeit vegigjarjuk es az eletkor szerint rendezzuk oket.
+            for (let j = i + 1; j < sorted.length; j++) {
+                if (sorted[i].eletkor > sorted[j].eletkor) { // A tomb elemeit vegigjarjuk es az eletkor szerint rendezzuk oket.
+                    let temp = sorted[i];
+                    sorted[i] = sorted[j];
+                    sorted[j] = temp;
+                }
             }
         }
-        this.#updatecallback(result);
+        this.#updatecallback(sorted);
     }
 
-    
-    filter(filterCallback){ // A filter fuggvenyben megadott feltetel alapjan szuri az adatokat es frissiti a tablazatot.
-        const result = [];
-        for (const person of this.#array) {
-            if (filterCallback(person)) { // A filterCallback fuggvenyben megadott feltetel alapjan szuri az adatokat es frissiti a tablazatot.
-                result.push(person);
+    order(x) { // A szemelyeket tarolo tombot rendezzuk az x fuggveny szerint es frissitjuk a tablazatot.
+        const sorted = this.#array.slice();
+        for (let i = 0; i < sorted.length - 1; i++) { // -1-rol inditjuk, mert az utolso elemet nem kell vizsgalni, mert az mar a helyen van.
+            for (let j = i + 1; j < sorted.length; j++) {
+                if (x(sorted[i], sorted[j]) > 0) {
+                    let temp = sorted[i];
+                    sorted[i] = sorted[j];
+                    sorted[j] = temp;
+                }
             }
         }
-        this.#updatecallback(result);
+        this.#updatecallback(sorted);
     }
 }
 
@@ -98,10 +103,26 @@ class DataTable{
      * @param {DataManager} dataManager 
      */
     constructor(dataManager){
-        const table = document.createElement('table');
+        const table = document.createElement('table'); // Letrehozom a tablazatot
         document.body.appendChild(table);
 
-        const tbody = document.createElement('tbody');
+        const thead = document.createElement('thead'); // Letrehozom a fejleceket
+        table.appendChild(thead);
+
+        const headerRow = document.createElement('tr'); // Letrehozom a fejlec sorokat
+        thead.appendChild(headerRow);
+
+        const nevHdr = document.createElement('th'); // Letrehozom a nev fejleceket
+        nevHdr.textContent = "Név";
+        nevHdr.addEventListener('click', () => dataManager.orderByName()); // A nev fejlec kattintasara meghivja az orderByName metodust.
+        headerRow.appendChild(nevHdr);
+
+        const eletkorHdr = document.createElement('th'); // Letrehozom az eletkor fejleceket
+        eletkorHdr.textContent = "Életkor";
+        eletkorHdr.addEventListener('click', () => dataManager.orderByAge()); // Az eletkor fejlec kattintasara meghivja az orderByAge metodust.
+        headerRow.appendChild(eletkorHdr);
+
+        const tbody = document.createElement('tbody'); // Letrehozom a tablazat tartalmat
         table.appendChild(tbody);
         this.#tbody = tbody;
 
