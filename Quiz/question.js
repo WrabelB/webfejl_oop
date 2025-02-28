@@ -1,52 +1,53 @@
 /**
- * Ezzel entitassal fog dolgozn a manager osztaly.
+ * Ezzel az entitassal fog dolgozni a manager osztalyunk
+ * (a manager tmobje ezeket fogja tartalmazni)
  */
 class Question {
     /**
-     * @param {string} questionText
+     * @type {string}
      */
-    #questionText;
+    #questionText
 
     /**
-     * @param {string[]} 
+     * @type {string[]}
      */
-    #answers;
+    #answers
 
     /**
-     * @param {string} 
+     * @type {string}
      */
-    #rightAnswer;
+    #rightAnswer
 
     /**
-     * @returns {string[]} valaszokat tatlamazo tomb
+     * @returns {string[]} a valaszokat tartalmazza
      */
-    get answers(){
-        return this.#answers;
+    get answers() {
+        return this.#answers 
     }
 
     /**
-     * @returns {string} a kerdes szoveget adja vissza
+     * @returns {string} a kerdes a szoveget tartalmazza
      */
-    get questionText(){
-        return this.#questionText;
+    get questionText() {
+        return this.#questionText
     }
 
     /**
-     * @returns {string} a helyes valaszt adja vissza
+     * @returns {string} a jo valasz szoveget tartalazza
      */
-    get rightAnswer(){
-        return this.#rightAnswer;
-  }
+    get rightAnswer() {
+        return this.#rightAnswer
+    }
 
-  /**
-   * 
-   * @param {string} questionText 
-   * @param {string[]} answers 
-   * @param {string} rightAnswer 
-   */
-  constructor (questionText, answers, rightAnswer){
-      this.#questionText = questionText;
-      this.#answers = answers;
-      this.#rightAnswer = rightAnswer;
-  }
+    /**
+     * 
+     * @param {string} questionText 
+     * @param {string[]} answers 
+     * @param {string} rightAnswer 
+     */
+    constructor(questionText, answers, rightAnswer) {
+        this.#answers = answers
+        this.#questionText = questionText
+        this.#rightAnswer = rightAnswer
+    }
 }

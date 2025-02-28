@@ -52,15 +52,16 @@ const array = [
   ];
 
   /**
-   * @type {Question[]} // A managerArray tombben Question tipusu elemek lesznek
+   * @type {Question[]}
    */
-const managerArray = []; // Letrehozzuk a managerArray tombot
-for(const element of array){ // Vegigiteralunk az array elemein
-    const question = new Question(element.question, element.answers, element.rightAnswer); // Letrehozzuk a kerdest
-    managerArray.push(question); // Hozzaadjuk a managerArray tombhoz
+const managerArray = []
+for(const element of array) {
+    const question = new Question(element.question, element.answers, element.rightAnswer)
+    managerArray.push(question)
+    // managerArray.push(new Question(element.question, element.answers, element.rightAnswer))
 }
 
-const questionArea = new QuestionArea('question'); // Letrehozzuk a kerdeseket tartalmazo teruletet
-const answerArea = new AnswerArea('answer'); // Letrehozzuk a valaszokat tartalmazo teruletet
-
-
+const manager = new Manager(managerArray)
+const questionArea = new QuestionArea('question', manager)
+const answerArea = new AnswerArea('answer-area', manager)
+manager.start()
