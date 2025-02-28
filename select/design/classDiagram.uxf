@@ -1,0 +1,32 @@
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><element><id>UMLClass</id><coordinates><x>117</x><y>279</y><w>126</w><h>33</h></coordinates><panel_attributes>Card
+--
+&lt;&lt;get&gt;&gt; - text: String
+&lt;&lt;get&gt;&gt; - correct: boolean
+--
++ constructor(text: String, correct: boolean)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>321</x><y>360</y><w>108</w><h>60</h></coordinates><panel_attributes>Manager
+--
+- currentCardNumber: number
+- solution: Object
+- nextCardCallback: NextCardCallback
+- appendCardToSolution: AppendCardToSolutionCallback
+- finishCallback: FinishCallback
+--
++ constructor(Card[])
++ setNextCardCallback(cb: NextCardCallback) : void
++ setAppendCardToSolution(cb:  AppendCardToSolutionCallback): void
++ setFinishCallback(cb: FinishCallback): void
++ nextCard(answer: string): void
++ start(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>294</y><w>87</w><h>111</h></coordinates><panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;
+array
+m1= *</panel_attributes><additional_attributes>10;10;130;10;130;350;270;350</additional_attributes></element><element><id>UMLClass</id><coordinates><x>327</x><y>450</y><w>90</w><h>24</h></coordinates><panel_attributes>Area
+--
+&lt;&lt;get&gt;&gt; - div: HtmlDivElement
+--
++ constructor(cssClass: string, manager: Manager)
+- getContainer(): HtmlDivElement
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>213</x><y>492</y><w>93</w><h>15</h></coordinates><panel_attributes>DeckArea
+--
++ constructor(className: sring, manager: Manager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>453</x><y>489</y><w>90</w><h>18</h></coordinates><panel_attributes>SolutionArea
+--
++ constructor(className: sring, manager: Manager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>258</x><y>417</y><w>90</w><h>81</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>280;10;280;50;10;50;10;250</additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>417</y><w>105</w><h>78</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;60;330;60;330;240</additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>417</y><w>9</w><h>39</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>471</y><w>87</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;110;270;110</additional_attributes></element><element><id>Relation</id><coordinates><x>303</x><y>471</y><w>66</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;110;10;110</additional_attributes></element></diagram>

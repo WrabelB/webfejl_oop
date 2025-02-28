@@ -1,0 +1,93 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>474</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>main.js</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>DeckArea</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>930</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>SolutionArea</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>76</y><w>18</w><h>768</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;1260</additional_attributes></element><element><id>Relation</id><coordinates><x>774</x><y>76</y><w>24</w><h>756</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;20;1240</additional_attributes></element><element><id>Relation</id><coordinates><x>864</x><y>76</y><w>24</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;20;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>1182</x><y>124</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1 click on card</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>184</y><w>216</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.2 create deck area</panel_attributes><additional_attributes>340;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>582</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Card</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>606</x><y>76</y><w>18</w><h>768</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;1260</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>94</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1 create card</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>112</y><w>126</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>154</y><w>384</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;620;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Area</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>76</y><w>24</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;20;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>702</x><y>196</y><w>90</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.2.1 create area</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>774</x><y>214</y><w>108</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.2.1 #getContanier</panel_attributes><additional_attributes>10;60;50;60;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>256</y><w>102</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.2.1 setFinishCallback</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>774</x><y>280</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>304</y><w>90</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>340</y><w>186</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.2.2 setNextCardCallback</panel_attributes><additional_attributes>290;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>370</y><w>186</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;290;20</additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>394</y><w>222</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;350;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>424</y><w>486</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3 create solution area</panel_attributes><additional_attributes>790;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>472</y><w>204</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3.1 create area</panel_attributes><additional_attributes>10;20;320;20</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>514</y><w>108</w><h>48</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3.2 #getContanier</panel_attributes><additional_attributes>10;60;50;60;50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>562</y><w>102</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3.3 setFinishCallback</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>586</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>610</y><w>210</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>330;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>864</x><y>640</y><w>132</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3.4 setAppendToSolutionCallback</panel_attributes><additional_attributes>20;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>670</y><w>120</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>700</y><w>498</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;810;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>742</y><w>390</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3 manager start</panel_attributes><additional_attributes>630;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Actor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1158</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>actor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1254</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>DeckArea</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1368</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1476</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>SolutionArea</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1182</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>1278</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>1500</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>504</x><y>136</y><w>384</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1 create manager</panel_attributes><additional_attributes>620;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1278</x><y>136</y><w>132</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.1 nextCard(answer)</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1572</x><y>64</y><w>60</w><h>18</h></coordinates><panel_attributes>Area</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1596</x><y>76</y><w>30</w><h>762</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;30;1250</additional_attributes></element><element><id>Relation</id><coordinates><x>1386</x><y>166</y><w>144</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.2 appendToSolutionCallback(answer)</panel_attributes><additional_attributes>210;20;20;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>202</y><w>126</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1284</x><y>232</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.3 nextCardCallback(text)</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1278</x><y>250</y><w>138</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1158</x><y>88</y><w>480</w><h>252</h></coordinates><panel_attributes>fontsize=20
+__not the last question__
+bg=blue
+fg=red
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1158</x><y>550</y><w>480</w><h>252</h></coordinates><panel_attributes>fontsize=20
+__last question__
+bg=red
+fg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1188</x><y>592</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1 click on answercard or skip</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1188</x><y>280</y><w>222</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;350;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1290</x><y>622</y><w>132</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.1 nextQuestion(answer)</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1410</x><y>652</y><w>222</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.1 finishCallback(result)</panel_attributes><additional_attributes>350;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1404</x><y>694</y><w>222</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;350;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1194</x><y>712</y><w>222</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;350;20</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>82</y><w>18</w><h>768</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;1260</additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>82</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1 global</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1158</x><y>340</y><w>474</w><h>210</h></coordinates><panel_attributes>fontsize=20
+__on skip__
+bg=green
+fg=yellow
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1188</x><y>376</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1 click on skip</panel_attributes><additional_attributes>170;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1284</x><y>400</y><w>132</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.1 nextCard()</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1284</x><y>424</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.1.3 nextCardCallback(text)</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1188</x><y>442</y><w>114</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>702</x><y>772</y><w>180</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-
+1.3.1 next card callback</panel_attributes><additional_attributes>10;20;280;20</additional_attributes></element><element><id>Relation</id><coordinates><x>702</x><y>790</y><w>180</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>280;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>808</y><w>384</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+
+
+</panel_attributes><additional_attributes>10;20;620;20</additional_attributes></element></diagram>
